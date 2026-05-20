@@ -695,3 +695,331 @@ align-items: center;
  .footer-desc-container{
   margin-right: 120px;
  }
+
+ .footer-form {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.subcribe-label{
+  margin-right: 24px;
+}
+.footer-form-title {
+ display: block;
+  font-family: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light-txt-cl);
+
+  margin-bottom: 16px;
+ margin-right: auto;
+}
+
+.footer-form-input {
+  width: 264px;
+  height: 40px;
+
+ 
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  color: var(--light-txt-cl);
+  font-size: 12px;
+}
+
+.footer-form-input::placeholder {
+  color: var(--light-txt-cl);
+}
+.subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+ text-align: left;
+ padding: 8px 24px;
+ 
+  min-width: 165px;
+  height: 40px;
+
+  border: none;
+  background: #4d5ae5;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--btn-color);
+
+  transition: background-color var(--transition);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: var(--accent-bg-color);
+  }
+
+
+.footer-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+.footer-icon {
+  fill: #ffffff; 
+}
+
+/**
+   |============================
+   | Modal window
+   |============================
+ */
+.backdrop {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  padding-top: 72px;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 408px;
+  min-height: 584px;
+
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-70%);
+  transition-delay: 0ms;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  background: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: background-color var(--transition), border var(--transition);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: #404bbf;
+  border: none;
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+  fill: #ffffff;
+}
+
+.modal-close-icon {
+  fill: #2e2f42;
+  transition: fill var(--transition);
+}
+
+/**
+  |============================
+  | Form styles
+  |============================
+*/
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px; */
+}
+
+.form-title {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--primary-color);
+
+
+  margin-bottom: 16px;
+}
+.modal-form-field {
+  margin-bottom: 11px;
+}
+.modal-form-desc {
+  display: block;
+  font-family: var(--primary-font);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+
+  margin-bottom: 4px;
+}
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  outline: none;
+
+  padding: 11px 38px;
+
+  transition: border var(--transition);
+}
+
+.modal-form-input:focus {
+  border: 1px solid #4d5ae5;
+}
+.modal-form-field-wrapper {
+  position: relative;
+  display: block;
+}
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  fill: currentColor;
+  pointer-events: none;
+
+  transform: translateY(-50%);
+
+  transition: fill var(--transition);
+}
+
+.modal-form-input:focus + .modal-form-icon {
+  fill: #4d5ae5;
+}
+.modal-form-comment {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  padding-top: 8px;
+  padding-left: 16px;
+
+  outline: none;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  transition: border var(--transition);
+}
+
+.modal-form-comment:focus {
+  border: 1px solid #4d5ae5;
+}
+
+.modal-form-comment::placeholder {
+  font-family: var(--primary-font);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+
+  color: rgba(46, 47, 66, 0.4);
+}
+.modal-input-checkbox {
+  appearance: none;
+}
+
+.modal-input-checkbox:checked {
+  background-color: #404bbf;
+  border-color: #404bbf;
+}
+.modal-input-checkbox:focus-visible {
+  outline-color: #404bbf;
+}
+.modal-checkbox-desc {
+  display: flex;
+  align-items: center;
+  font-family: var(--primary-font);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+
+  gap: 5px;
+  margin-bottom: 24px;
+  user-select: none;
+}
+.checkbox-link {
+  color: #404bbf;
+}
+
+.submit-btn {
+  margin: 0 auto;
+  width: 169px;
+  height: 56px;
+
+  background: #4d5ae5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: var(--btn-color);
+  border: none;
+  cursor: pointer;
+
+  transition: background-color var(--transition);
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: var(--accent-bg-color);
+}
+
+.unchecked {
+  opacity: 1;
+}
+.checked {
+  opacity: 0;
+}
+.modal-input-checkbox:checked + .modal-custom-check > .unchecked {
+  opacity: 0;
+}
+
+.modal-input-checkbox:checked + .modal-custom-check > .checked {
+  opacity: 1;
+}
